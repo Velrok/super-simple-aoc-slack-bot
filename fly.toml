@@ -1,0 +1,12 @@
+# fly.toml app configuration file generated for super-simple-aoc-slack-bot on 2024-12-06T22:40:16Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'super-simple-aoc-slack-bot'
+primary_region = 'lhr'
+
+[build]
+
+[[vm]]
+  size = 'shared-cpu-1x'
