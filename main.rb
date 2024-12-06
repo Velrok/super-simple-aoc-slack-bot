@@ -82,10 +82,8 @@ end
 
 def run_diff
   if current_result_age_seconds < 900
-    warn "Current result (age: #{current_result_age_seconds}s) within the last 15 min. (900s)."
-    warn "Adhering to rate limit. Please wait before running again."
-    warn "Exiting."
-    exit 1
+    warn "Current result (age: #{current_result_age_seconds}s) is within the rate limit of 15 min. (900s)."
+    return
   end
 
   remember_last_result
@@ -97,8 +95,8 @@ def run_diff
       message_slack("#{name} earned #{"⭐" * start_diff} for a total of ⭐#{stars}")
     end
   else
-    warn 'Results are the same. Exiting.'
-    exit 2
+    warn 'Results are the same.'
+    return
   end
 end
 
@@ -110,4 +108,14 @@ def main
   end
 end
 
-main
+
+if ARGV.include?('--deamon')
+  warn 'Running in deamon mode'
+  loop do
+    main
+    warn 'Sleeping. Will try again in a minute.'
+    sleep(60)
+  end
+else
+  main
+end
