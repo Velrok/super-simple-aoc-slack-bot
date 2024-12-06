@@ -69,6 +69,7 @@ def run_init
   warn 'No previous result found. Running initial fetch.'
   fetch_new
   remember_last_result
+  fetch_new
 end
 
 def message(text)
