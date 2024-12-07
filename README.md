@@ -2,6 +2,9 @@
 
 [Advent of Code](https://adventofcode.com/)
 
+<img width="411" alt="Screenshot 2024-12-07 at 01 52 20" src="https://github.com/user-attachments/assets/306573b4-9a15-4003-8ead-c6ca49fd09a9">
+
+
 ## AoC Automation Guidelines
 
 This script/repo/tool does follow the [automation guidelines](https://www.reddit.com/r/adventofcode/wiki/faqs/automation) on the /r/adventofcode community wiki.
