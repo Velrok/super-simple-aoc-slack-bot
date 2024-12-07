@@ -2,6 +2,16 @@
 
 [Advent of Code](https://adventofcode.com/)
 
+## AoC Automation Guidelines
+
+This script/repo/tool does follow the [automation guidelines](https://www.reddit.com/r/adventofcode/wiki/faqs/automation) on the /r/adventofcode community wiki.
+
+Specifically:
+
+Outbound calls are throttled to every 15 minutes in `run_diff`.
+Once inputs are downloaded, they are cached locally `remember_last_result` and `fetch_new`.
+The User-Agent header in `fetch_new` is set to me since I maintain this tool :)
+
 ## Setup
 
 This comes with a [fly.io](https://fly.io/) deployment config if you want it.
