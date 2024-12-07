@@ -12,6 +12,7 @@ def previous_result_path = 'data/previous.json'
 def current_result_path = 'data/current.json'
 
 def needs_init? = !File.exist?(previous_result_path)
+def user_agent = 'https://github.com/Velrok/super-simple-aoc-slack-bot'
 
 def fetch_new
   warn 'Fetching new result'
@@ -20,6 +21,7 @@ def fetch_new
     -H 'accept-language: en-GB,en-US;q=0.9,en;q=0.8' \
     -H 'cookie: session=#{session}' \
     -H 'priority: u=0, i' \
+    -H 'user-agent: #{user_agent}' \
     -H 'upgrade-insecure-requests: 1'`
   File.write(current_result_path, json)
 end
